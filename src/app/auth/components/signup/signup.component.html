@@ -1,0 +1,31 @@
+<div class="container h-2">
+  <div class="row d-flex justify-content-center align-items-center h-2">
+    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+      <div class="card p-5 signUpForm">
+        <form #form="ngForm" (ngSubmit)="onsubmit(form)">
+          <h3>Registrati</h3>
+          <div class="form-outline mb-4">
+            <label for="name" class="form-label">Nome</label>
+            <input name="name" required ngModel class="form-control form-control-lg" id="name" type="text">
+          </div>
+          <div class="form-outline mb-4">
+            <label for="lastname" class="form-label">Cognome</label>
+            <input name="lastname" required ngModel class="form-control form-control-lg" id="lastname" type="text">
+          </div>
+          <div class="form-outline mb-4">
+            <label for="email" class="form-label">Email</label>
+            <input name="email" class="form-control form-control-lg" required ngModel id="email" type="email" />
+          </div>
+          <div class="form-outline mb-4">
+            <label for="pass" class="form-label">Password</label>
+            <input name="password" class="form-control form-control-lg" required ngModel id="pass" type="password" />
+          </div>
+          <button type="submit" [disabled]="form.invalid" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Registrati
+            <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <p class="text-center text-muted mt-5 mb-0">Sei già registrato? Clicca <a class="fw-bold text-body" [routerLink]="['']">qui</a></p>
+  </div>
+</div>

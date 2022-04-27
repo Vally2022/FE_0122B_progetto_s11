@@ -1,0 +1,7 @@
+<div>
+    <img src="http://image.tmdb.org/t/p/w500{{films.poster_path}}" alt="{{films.poster_path}}" width="250px">
+    <div class="card-body" *ngIf="utenteLoggato">
+        <p class="card-text" (click)="favoriti ? rimuoviFavorito(films.id) : addPreferito(films.id,utenteLoggato.user.id)" [ngStyle]="{'color': favoriti ? 'red' : ''}">♥</p>
+        
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div class="container mt-5" *ngIf="films">
+    <div class="row">
+        <div class="card col-12 col-md-6 col-xl-3 mb-3 me-3 bg-dark" *ngFor="let film of films">
+
+            <app-film-card [films]="film"></app-film-card>
+        </div>
+    </div>
+</div>
+
